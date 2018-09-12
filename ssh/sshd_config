@@ -40,6 +40,7 @@ PermitRootLogin no
 MaxAuthTries 6
 #MaxSessions 10
 
+Protocol 2,1
 #PubkeyAuthentication yes
 
 # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
