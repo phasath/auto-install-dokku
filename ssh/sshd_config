@@ -123,7 +123,7 @@ PrintLastLog yes
 #VersionAddendum none
 
 # no default banner path
-#Banner none
+Banner /etc/ssh/banner.txt
 
 # Accept locale-related environment variables
 AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
