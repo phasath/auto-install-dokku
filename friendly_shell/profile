@@ -44,3 +44,4 @@ fi
 
 
 HOSTNAME=`/usr/bin/hostname 2>/dev/null`
+HISTSIZE=1000
