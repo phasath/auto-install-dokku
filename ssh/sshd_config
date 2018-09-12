@@ -106,7 +106,7 @@ X11Forwarding no
 #X11UseLocalhost yes
 #PermitTTY yes
 PrintMotd yes
-#PrintLastLog yes
+PrintLastLog yes
 #TCPKeepAlive yes
 #UseLogin no
 #UsePrivilegeSeparation sandbox
