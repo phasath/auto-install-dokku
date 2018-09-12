@@ -41,6 +41,7 @@ MaxAuthTries 6
 #MaxSessions 10
 
 Protocol 2,1
+AllowUsers raphael.sathler cleiton.marques glauco.marques leonardo.peters israelst
 #PubkeyAuthentication yes
 
 # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
