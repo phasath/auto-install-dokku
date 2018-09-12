@@ -141,4 +141,5 @@ Subsystem	sftp	/usr/libexec/openssh/sftp-server
 #	PermitTTY no
 #	ForceCommand cvs server
 
+MACs hmac-sha2-512,hmac-sha2-256
 Ciphers aes256-ctr,aes192-ctr,aes128-ctr
