@@ -41,3 +41,6 @@ else
     pathmunge /usr/local/sbin after
     pathmunge /usr/sbin after
 fi
+
+
+HOSTNAME=`/usr/bin/hostname 2>/dev/null`
