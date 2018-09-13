@@ -75,4 +75,12 @@ else
 		echo -e "\tAdding DOKKU to wheel group" ;
 		usermod -aG wheel dokku ;
 
+		echo -e "\tAdding SSH Keys to DOKKU" ;
+		cd pub_keys ;
+		for pkey in * ; do
+			if [[ $pkey = *'.pub' ]]; then
+				echo -e "\t\tAdding $pkey key "
+				dokku ssh-keys:add $pkey $pkey
+			fi
+		done
 fi
