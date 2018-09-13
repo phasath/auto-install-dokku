@@ -50,4 +50,16 @@ else
 		chmod 644 /etc/profile
 		echo -e "\nEverything configured" ;
 
+		echo -e "\n\nSetting up DOKKU" ;
+
+		echo -e "\tGetting DOKKU lastest release" ;
+		#Exporting the python enconding as we're using python2
+		export PYTHONIOENCODING=utf8
+		DOKKU_LATEST=$(curl https://api.github.com/repos/dokku/dokku/tags | python2 -c "import sys,json; print json.load(sys.stdin)[0]['name']")
+
+		echo -e "\tDownloading DOKKU lastest release" ;
+		wget --directory-prefix=/tmp https://raw.githubusercontent.com/dokku/dokku/$DOKKU_LATEST/bootstrap.sh
+		
+		echo -e "\tInstalling DOKKU" ;
+		DOKKU_TAG=$DOKKU_LATEST bash /tmp/bootstrap.sh
 fi
