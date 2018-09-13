@@ -62,4 +62,13 @@ else
 		
 		echo -e "\tInstalling DOKKU" ;
 		DOKKU_TAG=$DOKKU_LATEST bash /tmp/bootstrap.sh
+
+		echo -e "\tConfiguring web ports for DOKKU" ;
+		if [ $(python -mplatform | grep -i Ubuntu) ]; then
+			ufw allow http ;
+			ufw allow https ;
+		else
+			firewall-cmd --zone=public --add-port=80/tcp --permanent
+			firewall-cmd --zone=public --add-port=443/tcp --permanent
+		fi
 fi
