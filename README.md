@@ -8,3 +8,20 @@ As configurações do SSH serão trackeadas por este repositório a fim de termo
 
 - SSH
 
+# Como instalar
+
+## install.sh
+
+Use o arquivo install para configurar os passos básicos necessários no servidor fazendo diretamente pela sua máquina
+
+Execução:
+
+```
+$ bash install.sh host_address port username domain
+```
+
+Onde:
+    host_adress é o endereço IP do servidor
+    port é a porta do servidor
+    username é o usuário com permissões root para acessar o servidor
+    domain é o domínioa ser usado pelo dokku
