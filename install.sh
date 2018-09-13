@@ -15,9 +15,11 @@ else
 		if [ $(python -mplatform | grep -i Ubuntu) ]; then
 			apt-get update ;
 			apt-get upgrade ;
+			apt-get install git ;
 		else
 			yum update ;
 			yum upgrade ;
+			yum install git ;
 		fi
 
 		#Configuring the SSH
