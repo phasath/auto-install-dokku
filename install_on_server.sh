@@ -89,4 +89,7 @@ else
 			fi
 		done
 
+		echo -e '\tDeactivating enforce' ;
+		sudo setenforce 0 ;
+
 fi
