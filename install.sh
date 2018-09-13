@@ -42,4 +42,12 @@ else
 		mkdir -p /usr/src/scripts && cp friendly_shell/dymotd /usr/src/scripts ;
 		echo -e "\t\tSetting permissions..." ;
 		chmod 755 /usr/src/scripts/dymotd ;
+
+		echo -e "\n\tProfile"
+		echo -e "\t\tCopying files..." ;
+		cp friendly_shell/profile /etc/profile ;
+		echo -e "\t\tSetting permissions..." ;
+		chmod 644 /etc/profile
+		echo -e "\nEverything configured" ;
+
 fi
