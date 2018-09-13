@@ -36,4 +36,10 @@ else
 		fi
 		chown root:root /etc/ssh/ssh_host_*.pub ;
 		chmod 644 /etc/ssh/ssh_host_*.pub ;
+
+		echo -e "\n\tFriendly Shell" ;
+		echo -e "\t\tCopying files..." ;
+		mkdir -p /usr/src/scripts && cp friendly_shell/dymotd /usr/src/scripts ;
+		echo -e "\t\tSetting permissions..." ;
+		chmod 755 /usr/src/scripts/dymotd ;
 fi
