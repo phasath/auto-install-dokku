@@ -41,7 +41,7 @@ MaxAuthTries 6
 #MaxSessions 10
 
 Protocol 2,1
-AllowUsers raphael.sathler cleiton.marques glauco.marques leonardo.peters israelst
+AllowUsers raphael.sathler cleiton.marques glauco.marques leonardo.peters israelst dokku
 
 #PubkeyAuthentication yes
 
