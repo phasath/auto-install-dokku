@@ -71,4 +71,8 @@ else
 			firewall-cmd --zone=public --add-port=80/tcp --permanent
 			firewall-cmd --zone=public --add-port=443/tcp --permanent
 		fi
+
+		echo -e "\tAdding DOKKU to wheel group" ;
+		usermod -aG wheel dokku ;
+
 fi
