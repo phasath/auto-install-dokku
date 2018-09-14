@@ -87,6 +87,9 @@ else
 			fi
 		done
 
+		echo -e "\tAdding Let's Encrypt" ;
+		sudo dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
+
 		echo -e '\tDeactivating enforce' ;
 		sudo setenforce 0 ;
 
