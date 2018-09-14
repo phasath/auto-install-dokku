@@ -47,3 +47,11 @@ then
 fi
 
 echo -e "\n\nConnecting to $HOST using port $PORT as $USERNAME" ;
+
+# if [[ $USERNAME_TO_BE_CREATED ]]; then
+#     echo -e "\n\nCreating $USERNAME_TO_BE_CREATED on server $HOST" ;
+#     ssh $USERNAME@$HOST -p $PORT -t "sudo useradd -m $USERNAME_TO_BE_CREATED ; sudo passwd $USERNAME_TO_BE_CREATED ; sudo usermod -aG wheel $USERNAME_TO_BE_CREATED ;"
+#     echo -e "\n\nCopying public key from $USERNAME_TO_BE_CREATED to server $HOST" ;
+#     ssh-copy-id $USERNAME_TO_BE_CREATED@$HOST -p $PORT ;
+#     USERNAME=$USERNAME_TO_BE_CREATED ;
+# fi
