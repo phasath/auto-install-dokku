@@ -55,3 +55,8 @@ echo -e "\n\nConnecting to $HOST using port $PORT as $USERNAME" ;
 #     ssh-copy-id $USERNAME_TO_BE_CREATED@$HOST -p $PORT ;
 #     USERNAME=$USERNAME_TO_BE_CREATED ;
 # fi
+
+# echo -e "\n\nConnecting as $USERNAME to create the dapp.user and configuring all the necessary stuff to start the repository install script"
+# ssh $USERNAME@$HOST -p $PORT -A -i $IDENTITY_FILE_PATH -t "sudo useradd -c 'Usuário da DAPP' -m --system dapp.user ; sudo usermod -aG wheel dapp.user ;  sudo mkdir /conf ;"' if [ $(python -mplatform | grep -i Ubuntu) ]; then sudo apt-get install git ; else sudo yum install git ; fi ;'" sudo chown dapp.user:dapp.user -R /conf ; sudo chmod 775 -R /conf ; sudo usermod -aG dapp.user $USERNAME ;"
+echo -e "\n\nConnecting as $USERNAME to clone the repository and start the script"
+ssh $USERNAME@$HOST -p $PORT -A -i $IDENTITY_FILE_PATH -t "cd /conf && git clone ssh://git@git.dapp.cloud.fgv.br:777/source/cf-homog-web.git; cd /conf/cf-homog-web && sudo sh install_on_server.sh $DOMAIN"
