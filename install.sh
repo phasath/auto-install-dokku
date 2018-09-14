@@ -38,3 +38,10 @@ done
 shift $((OPTIND-1))
 
 [ "${1:-}" = "--" ] && shift
+
+if [[ $EUID == 0 ]] ; 
+then
+		echo "You are root. Please run it as your user (without sudo)\n" ;
+        show_help
+		exit 1
+fi
