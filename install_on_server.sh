@@ -89,6 +89,7 @@ else
 
 		echo -e "\tAdding Let's Encrypt" ;
 		sudo dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
+		dokku config:set --global DOKKU_LETSENCRYPT_EMAIL=dapp-ti@fgv.br
 
 		echo -e '\tDeactivating enforce' ;
 		sudo setenforce 0 ;
