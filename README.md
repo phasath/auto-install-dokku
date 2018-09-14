@@ -8,3 +8,17 @@ As configurações do SSH serão trackeadas por este repositório a fim de termo
 
 - SSH
 
+# Como instalar
+
+## install.sh
+
+Use o arquivo install para configurar os passos básicos necessários no servidor fazendo diretamente pela sua máquina
+
+Execução:
+
+```
+$ bash install.sh -h 
+```
+
+Para saber como configurar
+
