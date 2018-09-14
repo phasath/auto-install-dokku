@@ -17,11 +17,8 @@ Use o arquivo install para configurar os passos básicos necessários no servido
 Execução:
 
 ```
-$ bash install.sh host_address port username domain
+$ bash install.sh -h 
 ```
 
-Onde:
-    host_adress é o endereço IP do servidor
-    port é a porta do servidor
-    username é o usuário com permissões root para acessar o servidor
-    domain é o domínioa ser usado pelo dokku
+Para saber como configurar
+
