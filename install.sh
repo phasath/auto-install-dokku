@@ -45,3 +45,5 @@ then
         show_help
 		exit 1
 fi
+
+echo -e "\n\nConnecting to $HOST using port $PORT as $USERNAME" ;
