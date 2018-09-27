@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="table-of-contents">Table of Contents</h1>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#autoconfigure-dokku-on-ubuntu-or-centos-server">AutoConfigure Dokku on Ubuntu or CentOS server</a>
+<ul>
+<li><a href="#add-the-pub-keys-that-will-be-used-on-dokku">Add the pub keys that will be used on Dokku</a></li>
+<li><a href="#add-the-ssh-keys-to-the-server">Add the SSH Keys to the server</a></li>
+</ul>
+</li>
+<li><a href="#how-to-install">How to Install?</a>
+<ul>
+<li><a href="#installsh">install.sh</a></li>
+</ul>
+</li>
+<li><a href="#autoconfigurar-dokku-em-servidor-ubuntu-ou-centos">AutoConfigurar Dokku em servidor Ubuntu ou CentOS</a>
+<ul>
+<li><a href="#adicione-as-chaves-p%C3%BAblicas-utilizadas-no-dokku">Adicione as chaves públicas utilizadas no Dokku</a></li>
+<li><a href="#adicione-as-chaves-ssh-do-servidor">Adicione as chaves SSH do servidor</a></li>
+</ul>
+</li>
+<li><a href="#como-instalar">Como instalar</a>
+<ul>
+<li><a href="#arquivo-installsh">Arquivo install.sh</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="autoconfigure-dokku-on-ubuntu-or-centos-server">AutoConfigure Dokku on Ubuntu or CentOS server</h1>
+<p>Don't you know what is Dokku? See it <a href="https://github.com/dokku/dokku">here</a></p>
+<p>All the server configuration will be held in this repository so we can configure the server.
+I ask you to fork this repository to edit and add set your configuration.</p>
+<blockquote>
+<p>Make a fork so you can configure it</p>
+</blockquote>
+<h2 id="add-the-pub-keys-that-will-be-used-on-dokku">Add the pub keys that will be used on Dokku</h2>
+<p>The keys in <code>pub_keys</code> will be inserted on Dokku. The key must be the username on Dokku plus the <code>.pub</code> extension.</p>
+<h2 id="add-the-ssh-keys-to-the-server">Add the SSH Keys to the server</h2>
+<p>Add all the ssh keys used on server to autheticate this server on folder <code>ssh/keys</code>.</p>
+<h1 id="how-to-install">How to Install?</h1>
+<h2 id="installsh"><a href="http://install.sh">install.sh</a></h2>
+<p>Use the file <code>install.sh</code> to configure the necessary stuff so you can ssh into the machine and then, install and configure dokku on the server.</p>
+<p>Execution:</p>
+<pre><code>$ bash install.sh [-h?] [-H HOST IP] [-p PORT] [-u USERNAME] [-c USERNAME TO BE CREATED] [-d DOMAIN] [-i IDENTITY FILE PATH] [-a ALLOW USERS] 
+</code></pre>
+<p>Usage:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h</td>
+<td>Show help</td>
+</tr>
+<tr>
+<td>-?</td>
+<td>Show help</td>
+</tr>
+<tr>
+<td>-H</td>
+<td>Host IP to connect over SSH</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>Port to connect through SSH</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>Username used to connect</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>Domain to add on dokku</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>Username to be created. This will override -u user</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>Identity file path. Default is /home/{user}/.ssh/id_rsa</td>
+</tr>
+<tr>
+<td>-a</td>
+<td><code>AllowUsers</code> on <code>sshd_config</code>. Ex:. 'raphael.sathler john.doe ze.ninguem'</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>DON'T RUN THIS AS SUDO</p>
+</blockquote>
+<hr>
+<h1 id="autoconfigurar-dokku-em-servidor-ubuntu-ou-centos">AutoConfigurar Dokku em servidor Ubuntu ou CentOS</h1>
+<p>Não sabe o que é o Dokku? Veja <a href="https://github.com/dokku/dokku">aqui</a></p>
+<p>Todas as configurações do Servidor serão armazenadas nesse repositório para que possamos replicar e automatizar a configuração e instalação de um servidor novo.</p>
+<blockquote>
+<p>Faça um fork para que você possa editar</p>
+</blockquote>
+<h2 id="adicione-as-chaves-p%C3%BAblicas-utilizadas-no-dokku">Adicione as chaves públicas utilizadas no Dokku</h2>
+<p>As chaves em <code>pub_keys</code> serão inseridas no Dokku. O nome do usuário considerado é o nome da chave (removendo a extensão <code>.pub</code>).</p>
+<h2 id="adicione-as-chaves-ssh-do-servidor">Adicione as chaves SSH do servidor</h2>
+<p>Adicione as chaves que serão utilizadas no servidor para autenticá-lo na pasta <code>ssh/keys</code>.</p>
+<h1 id="como-instalar">Como instalar</h1>
+<h2 id="arquivo-installsh">Arquivo <a href="https://github.com/phasath/auto-install-dokku/blob/master/install.sh">install.sh</a></h2>
+<p>Use o arquivo install para configurar os passos básicos necessários no servidor fazendo diretamente pela sua máquina</p>
+<p>Execução:</p>
+<pre><code>$ bash install.sh [-h?] [-H HOST IP] [-p PORT] [-u USERNAME] [-c USERNAME TO BE CREATED] [-d DOMAIN] [-i IDENTITY FILE PATH] [-a ALLOW USERS] 
+</code></pre>
+<p>Uso:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Ação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h</td>
+<td>Mostrar a ajuda</td>
+</tr>
+<tr>
+<td>-?</td>
+<td>Mostrar a ajuda</td>
+</tr>
+<tr>
+<td>-H</td>
+<td>Host IP usado para conectar via SSH</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>Port usada para conectar via SSH</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>Usuário usado para conectar</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>Domínio para ser utilizado no dokku</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>Usuário a ser criado no servidor. Essa flag ira sobreescrever -u user</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>Caminho para o arquivo de identidade. Padrão é /home/{user}/.ssh/id_rsa</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>AllowUsers adicionadas no <code>sshd_config</code>. Ex:. 'raphael.sathler john.doe ze.ninguem'</td>
+</tr>
+</tbody>
+</table>
+
+    </body>
+    </html>
