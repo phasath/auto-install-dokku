@@ -22,8 +22,15 @@ else
 
 		#Configuring the SSH
 		echo -e "\n\tSSH" ;
+		echo -e "\t\tConfiguring files..." ;
+		sed -i.bak "s/#AllowUsers_SET_USERS_HERE/AllowUsers $ALLOWED_USERS/g" ssh/sshd_config
+		
+		for file in $(ls -1 ssh/keys); do 
+			sed -i.bak "s/# HOSTKEY_HERES/HostKey \/etc\/ssh\/$file\n# HOSTKEY_HERES/g" ssh/sshd_config; 
+		done
+
 		echo -e "\t\tCopying files..." ;
-		cp -r ssh/* /etc/ssh ;
+		cp ssh/* /etc/ssh ;
 
 		echo -e "\t\tSetting permissions..." ;
 		chmod 600 /etc/ssh/sshd_config ;
