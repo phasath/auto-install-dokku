@@ -1,3 +1,17 @@
+
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+- [AutoConfigure Dokku on Ubuntu or CentOS server](#autoconfigure-dokku-on-ubuntu-or-centos-server)
+    - [Add the pub keys that will be used on Dokku](#add-the-pub-keys-that-will-be-used-on-dokku)
+    - [Add the SSH Keys to the server](#add-the-ssh-keys-to-the-server)
+- [How to Install?](#how-to-install)
+    - [install.sh](#installsh)
+- [AutoConfigurar Dokku em servidor Ubuntu ou CentOS](#autoconfigurar-dokku-em-servidor-ubuntu-ou-centos)
+    - [Adicione as chaves públicas utilizadas no Dokku](#adicione-as-chaves-p%C3%BAblicas-utilizadas-no-dokku)
+    - [Adicione as chaves SSH do servidor](#adicione-as-chaves-ssh-do-servidor)
+- [Como instalar](#como-instalar)
+    - [Arquivo install.sh](#arquivo-installsh)
+
 # AutoConfigure Dokku on Ubuntu or CentOS server
 
 Don't you know what is Dokku? See it [here](https://github.com/dokku/dokku)
