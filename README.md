@@ -1,24 +1,89 @@
-# Configurações do Servidor WEB
+# AutoConfigure Dokku on Ubuntu or CentOS server
 
-Todas as configurações do Servidor Web serão armazenadas nesse repositório para que possamos replicar e automatizar a configuração e instalação de um servidor novo.
+Don't you know what is Dokku? See it [here](https://github.com/dokku/dokku)
 
-## Configurações que serão versionadas
+All the server configuration will be held in this repository so we can configure the server. 
+I ask you to fork this repository to edit and add set your configuration.
 
-As configurações do SSH serão trackeadas por este repositório a fim de termos controle sobre tudo o que é alterado para evitar falhas de seguranças e mudanças manuais serão:
+> Make a fork so you can configure it
 
-- SSH
+## Add the pub keys that will be used on Dokku
+
+The keys in `pub_keys` will be inserted on Dokku. The key must be the username on Dokku plus the `.pub` extension.
+
+## Add the SSH Keys to the server
+
+Add all the ssh keys used on server to autheticate this server on folder `ssh/keys`.
+
+# How to Install?
+
+## install.sh
+
+Use the file `install.sh` to configure the necessary stuff so you can ssh into the machine and then, install and configure dokku on the server.
+
+Execution:
+
+```
+$ bash install.sh [-h?] [-H HOST IP] [-p PORT] [-u USERNAME] [-c USERNAME TO BE CREATED] [-d DOMAIN] [-i IDENTITY FILE PATH] [-a ALLOW USERS] 
+```
+
+Usage: 
+
+|Command|Action|
+|---|---|
+|-h|Show help|
+|-?|Show help|
+|-H|Host IP to connect over SSH|
+|-p|Port to connect through SSH|
+|-u|Username used to connect|
+|-d|Domain to add on dokku|
+|-c|Username to be created. This will override -u user|
+|-i|Identity file path. Default is /home/{user}/.ssh/id_rsa|
+|-a|`AllowUsers` on `sshd_config`. Ex:. 'raphael.sathler john.doe ze.ninguem'|
+
+> DON'T RUN THIS AS SUDO
+
+
+---
+
+# AutoConfigurar Dokku em servidor Ubuntu ou CentOS
+
+Não sabe o que é o Dokku? Veja [aqui](https://github.com/dokku/dokku)
+
+Todas as configurações do Servidor serão armazenadas nesse repositório para que possamos replicar e automatizar a configuração e instalação de um servidor novo.
+
+> Faça um fork para que você possa editar 
+
+## Adicione as chaves públicas utilizadas no Dokku
+
+As chaves em `pub_keys` serão inseridas no Dokku. O nome do usuário considerado é o nome da chave (removendo a extensão `.pub`).
+
+## Adicione as chaves SSH do servidor
+
+Adicione as chaves que serão utilizadas no servidor para autenticá-lo na pasta `ssh/keys`.
 
 # Como instalar
 
-## install.sh
+## Arquivo [install.sh](https://github.com/phasath/auto-install-dokku/blob/master/install.sh)
 
 Use o arquivo install para configurar os passos básicos necessários no servidor fazendo diretamente pela sua máquina
 
 Execução:
 
 ```
-$ bash install.sh -h 
+$ bash install.sh [-h?] [-H HOST IP] [-p PORT] [-u USERNAME] [-c USERNAME TO BE CREATED] [-d DOMAIN] [-i IDENTITY FILE PATH] [-a ALLOW USERS] 
 ```
 
-Para saber como configurar
+Uso: 
 
+|Comando|Ação|
+|---|---|
+|-h|Mostrar a ajuda|
+|-?|Mostrar a ajuda|
+|-H|Host IP usado para conectar via SSH|
+|-p|Port usada para conectar via SSH|
+|-u|Usuário usado para conectar|
+|-d|Domínio para ser utilizado no dokku|
+|-c|Usuário a ser criado no servidor. Essa flag ira sobreescrever -u user|
+|-i|Caminho para o arquivo de identidade. Padrão é /home/{user}/.ssh/id_rsa|
+|-a|AllowUsers adicionadas no `sshd_config`. Ex:. 'raphael.sathler john.doe ze.ninguem'|
