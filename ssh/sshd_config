@@ -19,10 +19,7 @@
 #ListenAddress 0.0.0.0
 #ListenAddress ::
 
-HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_dsa_key
-HostKey /etc/ssh/ssh_host_ecdsa_key
-HostKey /etc/ssh/ssh_host_ed25519_key
+# HOSTKEY_HERES
 
 # Ciphers and keying
 #RekeyLimit default none
@@ -41,7 +38,7 @@ MaxAuthTries 6
 #MaxSessions 10
 
 Protocol 2,1
-AllowUsers raphael.sathler cleiton.marques glauco.marques leonardo.peters israelst dokku
+#AllowUsers_SET_USERS_HERE
 
 #PubkeyAuthentication yes
 
